@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Использование iframe</title>
+    <style>
+        .tag {
+            color: navy;
+        }
+        .attribute {
+            color: #e6550d;
+        }
+    </style>
+</head>
+<body>
+    <h1>Добавление встроенных фреймов</h1>
+    <p>Один из способов добавления содержимого на страницу — это внедрить другую HTML-страницу в текущую. Это делается с помощью встроенного фрейма или элемента <span class="tag">&lt;iframe&gt;</span>. Данный элемент принимает URL другой HTML-страницы в значении атрибута <span class="attribute">src</span>&nbsp;— это вызывает содержимое из внедрённой HTML-страницы для отображения на текущей странице. Значение атрибута <span class="attribute">src</span> может быть URL относительно страницы, где появляется элемент <span class="tag">&lt;iframe&gt;</span> или абсолютным адресом для исключительно внешней страницы.</p>
+    <p>Многие страницы используют элемент <span class="tag">&lt;iframe&gt;</span> для внедрения медиа-контента на страницу с внешнего сайта, вроде Google Maps, YouTube и др.</p>
+
+    <h2>Демонстрация добавления встроенного фрейма</h2>
+
+    <iframe src="https://www.youtube.com/embed/kKr6XHpM-a0" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+    <figcaption>Видео с YouTube</figcaption>
+
+    <iframe src="https://yandex.ru/map-widget/v1/-/CCUUCNz" width="560" height="400" frameborder="1" allowfullscreen="true"></iframe>
+    <figcaption>Карта с Яндекс.Карт</figcaption>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Форма</title>
+</head>
+<body>
+    <h1>Форма регистрации</h1>
+    <form action="#" method="post">
+        <table>
+            <tr>
+                <td>Название Форма регистрации:</td>
+                <td colspan="2"><input type="text" name="form_name"></td>
+            </tr>
+            <tr>
+                <td>E-mail:</td>
+                <td colspan="2"><input type="email" name="email" required></td>
+            </tr>
+            <tr>
+                <td>Пароль:</td>
+                <td colspan="2"><input type="password" name="password" required></td>
+            </tr>
+            <tr>
+                <td>Пол:</td>
+                <td><input type="radio" name="gender" value="male"> Мужчина</td>
+                <td><input type="radio" name="gender" value="female"> Женщина</td>
+            </tr>
+            <tr>
+                <td>Дата рождения:</td>
+                <td colspan="2"><input type="date" name="birthdate"></td>
+            </tr>
+            <tr>
+                <td>Язык:</td>
+                <td colspan="2">
+                    <input type="checkbox" name="language" value="russian"> Русский
+                    <input type="checkbox" name="language" value="english"> Английский
+                </td>
+            </tr>
+            <tr>
+                <td>Обо мне:</td>
+                <td colspan="2"><textarea name="about_me" rows="4" cols="50"></textarea></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Готово"></td>
+                <td><input type="reset" value="Очистить"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
