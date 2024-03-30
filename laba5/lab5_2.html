@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>lab5_2</title>
+    <title>Использование float при построении колонок</title>
     <style type="text/css">
         #left{
             background:#ccf;
@@ -21,11 +21,16 @@
             overflow: hidden;
             box-sizing: border-box;
         }
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
     </style>
 </head>
 <body>
 	<div id="left">left<br>left<br>left<br>left<br>left</div>
-	<div id="right">right<br>right<br>right<br>right</div>
-	<div id="center">center text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text</div>
+	<div id="right">right<br>right<br>right<br>right<br>right</div>
+	<div id="center" class="clearfix">text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text</div>
 </body>
 </html>
