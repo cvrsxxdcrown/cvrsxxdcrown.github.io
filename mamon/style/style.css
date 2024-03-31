@@ -1,33 +1,19 @@
 body {
     font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-.header {
-    width: 100%;
+.header-container {
     max-width: 1212px;
     margin: 0 auto;
     padding: 56px 15px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-sizing: border-box;
-    font-weight: 700;
 }
 
-.footer {
-    padding: 20px 0;
-    background-color: #F7F7F7;
-}
-
-.wrap {
-    width: 100%;
-    max-width: 1212px;
-    margin: 0 auto;
-    padding: 0 15px;
-    box-sizing: border-box;
-}
-
-.navigation {
+.main-nav {
     list-style-type: none;
     display: flex;
     justify-content: flex-start;
@@ -35,16 +21,16 @@ body {
     font-size: 14px;
 }
 
-.navigation>li {
+.main-nav li {
     margin-left: 37px;
 }
 
-.navigation>li>a {
+.main-nav li a {
     text-decoration: none;
     color: #202020;
 }
 
-.navigation_btn {
+.contact-btn {
     background-color: #5528FF;
     border-radius: 5px;
     padding: 6px 14px;
@@ -60,16 +46,30 @@ body {
 }
 
 .logo_img {
-    display: block;
     width: 58px;
     height: 58px;
-    background-image: url(../img/logo.svg);
     margin-right: 25px;
+}
+
+.logo_img img {
+    width: 100%;
+    height: auto;
 }
 
 .logo_text {
     font-size: 24px;
     color: #202020;
+}
+
+.main-content {
+    padding: 85px 0;
+}
+
+.content-wrap {
+    max-width: 1212px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
 }
 
 .main-title {
@@ -97,18 +97,19 @@ body {
     font-size: 24px;
 }
 
-.page {
-    padding-top: 85px;
-    padding-bottom: 109px;
+.main-section {
+    padding: 85px 0;
+}
+
+.section-wrap {
+    max-width: 1212px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+h2 {
     position: relative;
-}
-
-.page-top {
-    border-top: 1px solid #C2C2C2;
-}
-
-.page h2 {
-    position: absolute;
     top: -24px;
     font-size: 14px;
     font-weight: 300;
@@ -117,98 +118,67 @@ body {
     color: #C2C2C2;
 }
 
-.service-section {
+.services-grid,
+.clients-grid,
+.team-grid {
     display: grid;
-    grid-template: repeat(2, 1fr) / 50% 50%;
-    grid-row-gap: 38px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 38px;
 }
 
-.service-item {
+.service-item,
+.client-item,
+.team-member {
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
     align-items: center;
-}
-
-.service_img {
-    flex-basis: 165px;
     text-align: center;
 }
 
-.service_text {
-    flex-basis: calc(80% - 165px);
+.service-icon img,
+.client-item img,
+.team-member img {
+    width: 100px;
+    height: auto;
 }
 
-.service_text h3 {
+.service-text h3,
+.client-item h3,
+.team-member h3 {
     font-size: 28px;
     font-weight: 400;
     margin-bottom: 17px;
-    margin-top: 0;
 }
 
-.service_text p {
+.service-text p,
+.client-item p,
+.team-member p {
     font-size: 14px;
     color: #B2B2B2;
     line-height: 1.5;
 }
 
-.client-section {
-    display: grid;
-    grid-template: repeat(2, 1fr) / repeat(4, 25%);
-    text-align: center;
-    grid-row-gap: 44px;
-    padding-top: 0;
-}
-
-.team-section {
-    display: grid;
-    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-    grid-row-gap: 51px;
-    padding-top: 20px;
-}
-
-.team-member {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.team-member img{
-    margin-right: 35px;
-}
-
-.team-member>div {
-    flex-basis: calc(100% - 100px);
-}
-
-.team-member h3 {
-    font-size: 28px;
-    color: #202020;
-    margin-bottom: 0;
-    margin-top: 7px;
-}
-
-.team-member p {
-    font-size: 14px;
-    color: #B2B2B2;
-}
-
-.box-footer {
+.footer-wrap {
+    max-width: 1212px;
+    margin: 0 auto;
+    padding: 20px 15px;
+    background-color: #F7F7F7;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.social {
+.social-links {
     list-style-type: none;
     padding-left: 0;
     display: flex;
 }
 
-.social>li {
+.social-links li {
     margin-left: 40px;
 }
 
-.social>li>a {
+.social-links li a {
     text-decoration: none;
     color: #B2B2B2;
     font-size: 24px;
