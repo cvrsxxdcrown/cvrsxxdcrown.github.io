@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    'use strict'
+    var lines = prompt("Lines?")
+    var dogs = 3, cats = 2
+    for(let i = 0; i < lines; i++){
+    if (!dogs && !cats){dogs = 3, cats = 2}
+    if(dogs){
+        let a = 6 - dogs - cats
+        console.log("dog\t".repeat(dogs)+"cat\t".repeat(cats)+"dog\t".repeat(a))
+        dogs -= 1
+    }
+    else{
+        let dogss = 3
+        let a = 6 - dogss - cats
+        console.log("cat\t".repeat(cats)+"dog\t".repeat(dogss)+"cat\t".repeat(a))
+        cats -= 1
+    }
+    }
+    </script>
+</body>
+</html>

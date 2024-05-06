@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Номерки</title>
+</head>
+<body>
+    <h1>Номерки</h1>
+    <script>
+        'use strict';
+        var number;
+        do {
+            number = prompt("Введите число больше 100:");
+            if (number === null) {
+                break;
+            }
+            number = parseInt(number);
+            if (!isNaN(number) && number > 100) {
+                break;
+            } else {
+                alert("Пожалуйста, введите число больше 100 или нажмите Cancel.");
+            }
+        } while (true);
+    </script>
+</body>
+</html>

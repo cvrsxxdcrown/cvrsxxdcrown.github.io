@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вороны</title>
+</head>
+<body>
+    <h1>Counting Crows</h1>
+    <script>
+        'use strict';
+        var num = prompt("Введите количество ворон:");
+        num = parseInt(num);
+        if (!isNaN(num) && num >= 0) {
+            switch (num) {
+                case 0:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                case 10:
+                    alert(`На ветке сидит ${num} ворон`);
+                    break;
+                case 1:
+                    alert(`На ветке сидит ${num} ворона`);
+                    break;
+                case 2:
+                case 3:
+                case 4:
+                    alert(`На ветке сидит ${num} вороны`);
+                    break;
+                default:
+                    alert(`На ветке сидит много ворон`);
+                    break;
+            }
+        } else {
+            alert("Некорректный ввод");
+        }
+    </script>
+</body>
+</html>
