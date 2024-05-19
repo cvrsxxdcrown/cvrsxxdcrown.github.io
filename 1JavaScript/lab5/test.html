@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>Пользователи:</div>
+	<ul>
+		<li>Маша</li>
+		<li>Вовочка</li>
+	</ul>
+
+	<script>
+		const headElement = document.getElementsByTagName('head')[0];
+		console.log('Head Element:', headElement);
+		const ulElement = document.getElementsByTagName('ul')[0];
+		console.log('UL Element:', ulElement);
+		const liElements = document.getElementsByTagName('li');
+		console.log('LI Elements:', liElements);
+		for (let li of liElements) {
+			console.log('LI Text:', li.textContent);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Сообщения</title>
+	<style>
+		body {
+		  margin: 10px auto;
+		  width: 470px;
+		}
+
+		h3 {
+		  margin: 0;
+		  padding-bottom: .3em;
+		  padding-right: 20px;
+		  font-size: 1.1em;
+		}
+
+		p {
+		  margin: 0;
+		  padding: 0 0 .5em;
+		}
+
+		.pane {
+		  background: #edf5e1;
+		  padding: 10px 20px 10px;
+		  border-top: solid 2px #c4df9b;
+		  position: relative;
+		  margin-bottom: 10px;
+		}
+
+		.remove-button {
+		  position: absolute;
+		  font-size: 110%;
+		  top: 0;
+		  color: darkred;
+		  right: 10px;
+		  display: block;
+		  width: 24px;
+		  height: 24px;
+		  border: none;
+		  background: transparent;
+		  cursor: pointer;
+		}
+
+        .hide-button {
+		  position: absolute;
+		  font-size: 110%;
+		  top: 30px;
+		  color: rgb(66, 13, 211);
+		  right: 10px;
+		  display: block;
+		  width: 24px;
+		  height: 24px;
+		  border: none;
+		  background: transparent;
+		  cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="messages-container">
+	    <div class="pane">
+	      <h3>Лошадь</h3>
+	      <p>Домашняя лошадь — животное семейства непарнокопытных, одомашненный и единственный сохранившийся подвид дикой лошади, вымершей в дикой природе, за исключением небольшой популяции лошади Пржевальского.</p>
+	      <button class="remove-button" onclick="removePane(this)">[x]</button>
+          <button class="hide-button" onclick="hidePane(this)">[-]</button>
+	    </div>
+	    <div class="pane">
+	      <h3>Осёл</h3>
+	      <p>Домашний осёл или ишак — одомашненный подвид дикого осла, сыгравший важную историческую роль в развитии хозяйства и культуры человека. Все одомашненные ослы относятся к африканским ослам.</p>
+	      <button class="remove-button" onclick="removePane(this)">[x]</button>
+          <button class="hide-button" onclick="hidePane(this)">[-]</button>
+	    </div>
+	    <div class="pane">
+	      <h3>Корова, а также пара слов о диком быке, о волах и о тёлках. </h3>
+	      <p>Коро́ва — самка домашнего быка, одомашненного подвида дикого быка, парнокопытного жвачного животного семейства полорогих. Самцы вида называются быками, молодняк — телятами, кастрированные самцы — волами. Молодых (до первой стельности) самок называют
+	        тёлками.
+	      </p>
+	      <button class="remove-button" onclick="removePane(this)">[x]</button>
+          <button class="hide-button" onclick="hidePane(this)">[-]</button>
+	    </div>
+	</div>
+
+	<script>
+		function removePane(button) {
+			const pane = button.closest('.pane');
+			pane.remove();
+		}
+
+		function hidePane(button) {
+			const pane = button.closest('.pane');
+			const content = pane.querySelector('p');
+			if (content.style.display === 'none') {
+				content.style.display = 'block';
+				button.textContent = '[-]';
+			} else {
+				content.style.display = 'none';
+				button.textContent = '[+]';
+			}
+		}
+	</script>
+</body>
+</html>

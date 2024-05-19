@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Text</title>
+</head>
+<body>
+	<input type="button" id="hider" value="Спрятать текст">
+	<div id="text">Текст</div>
+
+	<script>
+		// Получаем элементы кнопки и текста
+		const button = document.getElementById('hider');
+		const textDiv = document.getElementById('text');
+
+		button.addEventListener('click', function() {
+			if (textDiv.style.display === 'none') {
+				textDiv.style.display = 'block';
+				button.value = 'Спрятать текст';
+			} else {
+				textDiv.style.display = 'none';
+				button.value = 'Показать текст';
+			}
+		});
+	</script>
+</body>
+</html>
