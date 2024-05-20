@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab7_2</title>
+    <style>
+        ::placeholder {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="div"></div>
+    <textarea id="textArea" placeholder="какой то текст" data-placeholder="aaa"></textarea>
+    <script>
+        const textArea = document.getElementById("textArea");
+        const displayDiv = document.getElementById("div");
+        const originalPlaceholder = textArea.placeholder;
+        const dataPlaceholder = textArea.dataset.placeholder;
+
+        textArea.addEventListener("mouseover", function() {
+            setTimeout(() => {
+                textArea.placeholder = dataPlaceholder;
+                displayDiv.innerText = originalPlaceholder;
+            }, 500);
+        });
+
+        textArea.addEventListener("mouseout", function() {
+            if (!textArea.value) {
+                displayDiv.innerText = "";
+                textArea.placeholder = originalPlaceholder;
+            }
+        });
+    </script>
+</body>
+</html>

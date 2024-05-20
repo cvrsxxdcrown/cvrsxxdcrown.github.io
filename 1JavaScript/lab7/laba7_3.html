@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laba7_3</title>
+</head>
+<body>
+    <div id="wow"></div>
+    <script>
+        var d = document.getElementById("wow")
+        var t = document.createElement('textarea')
+        var temp
+        document.addEventListener("keydown", function changeTag(event){
+            if(event.ctrlKey && event.key === 'e'){
+                event.preventDefault()
+                d.innerHTML = t.innerHTML
+                d.parentNode.replaceChild(t, d)
+                t.focus()
+            }
+            else if((event.ctrlKey && event.key === 's' && t.parentNode)){
+                event.preventDefault()
+                d.innerText=t.value
+                temp=t.value
+                t.parentNode.replaceChild(d, t)
+            }
+            else if(event.keyCode == 27 && temp){
+                event.preventDefault()
+                d.innerText=temp
+                t.parentNode.replaceChild(d, t)
+            }
+        })
+    </script>
+</body>
+</html>

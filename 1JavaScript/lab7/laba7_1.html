@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab7_1</title>
+</head>
+<body>
+    <select id="genre-select">
+        <option value="Rock">Рок</option>
+        <option value="Blues">Блюз</option>
+    </select>
+    <div id="selected-genre"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const selectElement = document.getElementById("genre-select");
+            const displayDiv = document.getElementById("selected-genre");
+
+            const newOption = document.createElement("option");
+            newOption.value = "Classic";
+            newOption.text = "Классика";
+            selectElement.add(newOption);
+            newOption.selected = true;
+
+            function printCurrent() {
+                displayDiv.innerText = selectElement.selectedOptions[0].text;
+            }
+
+            selectElement.addEventListener('change', printCurrent);
+
+            printCurrent();
+        });
+    </script>
+</body>
+</html>
