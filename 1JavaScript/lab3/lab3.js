@@ -1,13 +1,15 @@
 // lab3.js
 
 /**
- * Возвращает дробную часть числа num.
- * @param {number} num - Число.
- * @returns {number} Дробная часть числа.
+ * Возвращает дробную часть числа.
+ *
+ * @param {number} num - Число для извлечения дробной части
+ * @return {string} Дробная часть числа
  */
 export function getDecimal(num) {
-    return Math.abs(num % 1);
-}
+
+    return Number((num - Math.floor(num)).toFixed(2));
+    }
 
 /**
  * Нормализует URL, добавляя https:// в начале, если это необходимо.
@@ -41,15 +43,27 @@ export function truncate(str, maxlength) {
 }
 
 /**
+ * Преобразует первый символ в верхний регистр
+ * 
+ * @param {string} str - Исходная строка.
+ * @returns {string} Строка с первой заглавной буквой.
+ */
+export function ucFirst(str) {
+    if(!str) return str;
+    return str[0].toUpperCase() + str.slice(1);
+}
+
+
+/**
  * Преобразует строку вида 'var-test-text' в 'varTestText'.
  * @param {string} str - Исходная строка.
  * @returns {string} Преобразованная строка.
  */
 export function camelize(str) {
     return str
-        .split('-')
-        .map((word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1))
-        .join('');
+        .split('-')      
+        .map((word, index) => index === 0 ? word : ucFirst(word)) 
+        .join('');         
 }
 
 /**

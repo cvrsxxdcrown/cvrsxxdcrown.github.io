@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A</title>
+</head>
+<body>
+    <script>
+        
+let obj = {
+    className: 'open menu'
+};
+
+const jsonString = JSON.stringify(obj, null, 2);
+console.log(jsonString);
+
+const obj2 = JSON.parse(jsonString);
+console.log(JSON.stringify(obj) === JSON.stringify(obj2)); 
+    </script>
+</body>
+</html>
+

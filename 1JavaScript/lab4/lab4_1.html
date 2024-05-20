@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A</title>
+</head>
+<body>
+    <script>
+        class Book {
+            constructor(title, pubYear, price) {
+                this.title = title;
+                this.pubYear = pubYear;
+                this.price = price;
+            }
+
+            show() {
+                console.log(`Title: ${this.title}, Price: ${this.price}`);
+            }
+        }
+
+        const book1 = new Book('JavaScript: The Good Parts', 2024, 25);
+        book1.show();
+    </script>
+</body>
+</html>
