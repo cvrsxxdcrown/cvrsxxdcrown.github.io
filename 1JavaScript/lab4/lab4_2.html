@@ -10,10 +10,10 @@
     <script>
         class Book {
             constructor(title, pubYear, price) {
-                this._title = '';
-                this._pubYear = 0;
-                this._price = 0;
-                this.title = title;
+                this._title = ''; // Инциализация с геттерами и сеттерами не требуется
+                this._pubYear = 0; // Что то лишнее нужно ли свойство тайтл или будет достаточно геттеров и сеттеров или им достаточно 
+                this._price = 0; // Лишние инциализации они устанавливают значения которые нахуй не нужны
+                this.title = title; // Var и let в чем отличие
                 this.pubYear = pubYear;
                 this.price = price;
             }
