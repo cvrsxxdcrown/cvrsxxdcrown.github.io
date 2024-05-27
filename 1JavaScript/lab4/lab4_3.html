@@ -9,66 +9,65 @@
 <body>
     <script>
         class Book {
-    constructor(title, pubYear, price) {
-        this._title = '';
-        this._pubYear = 0;
-        this._price = 0;
-        this.title = title;
-        this.pubYear = pubYear;
-        this.price = price;
-    }
+            constructor(title, pubYear, price) {
+                this._title = '';
+                this._pubYear = 0;
+                this._price = 0;
+                this.title = title;
+                this.pubYear = pubYear;
+                this.price = price;
+            }
 
-    get title() {
-        return this._title;
-    }
+            get title() {
+                return this._title;
+            }
 
-    set title(value) {
-        if (value.trim() === '') {
-            throw new Error('Title cannot be an empty string');
+            set title(value) {
+                if (value.trim() === '') {
+                    throw new Error('Название не может быть пустой строкой');
+                }
+                this._title = value;
+            }
+
+            get pubYear() {
+                return this._pubYear;
+            }
+
+            set pubYear(value) {
+                if (typeof value !== 'number' || value <= 0) {
+                    throw new Error('Год публикации должен быть положительным числом');
+                }
+                this._pubYear = value;
+            }
+
+            get price() {
+                return this._price;
+            }
+
+            set price(value) {
+                if (typeof value !== 'number' || value <= 0) {
+                    throw new Error('Цена должна быть положительным числом');
+                }
+                this._price = value;
+            }
+
+            show() {
+                console.log(`Название: ${this.title}, Цена: ${this.price}`);
+            }
+
+            static compare(book1, book2) {
+                return book1.pubYear - book2.pubYear;
+            }
         }
-        this._title = value;
-    }
 
-    get pubYear() {
-        return this._pubYear;
-    }
+        const books = [
+            new Book('JavaScript: The Good Parts', 2008, 25),
+            new Book('You Don’t Know JS', 2014, 30),
+            new Book('Eloquent JavaScript', 2011, 20)
+        ];
 
-    set pubYear(value) {
-        if (typeof value !== 'number' || value <= 0) {
-            throw new Error('Publication year must be a positive number');
-        }
-        this._pubYear = value;
-    }
-
-    get price() {
-        return this._price;
-    }
-
-    set price(value) {
-        if (typeof value !== 'number' || value <= 0) {
-            throw new Error('Price must be a positive number');
-        }
-        this._price = value;
-    }
-
-    show() {
-        console.log(`Title: ${this.title}, Price: ${this.price}`);
-    }
-
-    static compare(book1, book2) {
-        return book1.pubYear - book2.pubYear;
-    }
-}
-
-const books = [
-    new Book('JavaScript: The Good Parts', 2008, 25),
-    new Book('You Don’t Know JS', 2014, 30),
-    new Book('Eloquent JavaScript', 2011, 20)
-];
-
-books.sort(Book.compare);
-books.forEach(book => book.show());
-
+        books.sort(Book.compare);
+        books.forEach(book => book.show());
     </script>
 </body>
 </html>

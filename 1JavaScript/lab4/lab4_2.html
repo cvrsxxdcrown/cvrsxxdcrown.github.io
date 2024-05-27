@@ -24,7 +24,7 @@
 
             set title(value) {
                 if (value.trim() === '') {
-                    throw new Error('Title cannot be an empty string');
+                    throw new Error('Название не может быть пустой строкой');
                 }
                 this._title = value;
             }
@@ -35,7 +35,7 @@
 
             set pubYear(value) {
                 if (typeof value !== 'number' || value <= 0) {
-                    throw new Error('Publication year must be a positive number');
+                    throw new Error('Год публикации должен быть положительным числом');
                 }
                 this._pubYear = value;
             }
@@ -46,13 +46,13 @@
 
             set price(value) {
                 if (typeof value !== 'number' || value <= 0) {
-                    throw new Error('Price must be a positive number');
+                    throw new Error('Цена должна быть положительным числом');
                 }
                 this._price = value;
             }
 
             show() {
-                console.log(`Title: ${this.title}, Price: ${this.price}`);
+                console.log(`Название: ${this.title}, Цена: ${this.price}`);
             }
         }
 
@@ -66,7 +66,7 @@
         }
 
         try {
-            book2.pubYear = -2020; // Параметры
+            book2.pubYear = -2020;
         } catch (e) {
             console.error(e.message);
         }
