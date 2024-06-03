@@ -8,6 +8,19 @@
         ::placeholder {
             color: blue;
         }
+
+        #textArea {
+            display: block;
+            width: 100%;
+            height: 100px;
+            position: relative; 
+            box-sizing: border-box; 
+        }
+
+        #div {
+            margin-top: 10px;
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -21,14 +34,14 @@
             const dataPlaceholder = textarea.dataset.placeholder;
 
             textarea.addEventListener("focus", () => {
-                textarea.placeholder = dataPlaceholder;
+                textarea.setAttribute("placeholder", dataPlaceholder);
                 displayDiv.innerText = originalPlaceholder;
             });
 
             textarea.addEventListener("blur", () => {
                 if (!textarea.value) {
                     displayDiv.innerText = "";
-                    textarea.placeholder = originalPlaceholder;
+                    textarea.setAttribute("placeholder", originalPlaceholder);
                 }
             });
         });
