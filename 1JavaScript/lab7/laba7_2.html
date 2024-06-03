@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab7_2</title>
+    <title>Document</title>
     <style>
         ::placeholder {
             color: blue;
@@ -12,25 +12,25 @@
 </head>
 <body>
     <div id="div"></div>
-    <textarea id="textArea" placeholder="какой то текст" data-placeholder="aaa"></textarea>
+    <textarea id="textArea" placeholder="какой-то текст" data-placeholder="ааа"></textarea>
     <script>
-        const textArea = document.getElementById("textArea");
-        const displayDiv = document.getElementById("div");
-        const originalPlaceholder = textArea.placeholder;
-        const dataPlaceholder = textArea.dataset.placeholder;
+        document.addEventListener("DOMContentLoaded", () => {
+            const textarea = document.getElementById("textArea");
+            const displayDiv = document.getElementById("div");
+            const originalPlaceholder = textarea.placeholder;
+            const dataPlaceholder = textarea.dataset.placeholder;
 
-        textArea.addEventListener("mouseover", function() {
-            setTimeout(() => {
-                textArea.placeholder = dataPlaceholder;
+            textarea.addEventListener("focus", () => {
+                textarea.placeholder = dataPlaceholder;
                 displayDiv.innerText = originalPlaceholder;
-            }, 500);
-        });
+            });
 
-        textArea.addEventListener("mouseout", function() {
-            if (!textArea.value) {
-                displayDiv.innerText = "";
-                textArea.placeholder = originalPlaceholder;
-            }
+            textarea.addEventListener("blur", () => {
+                if (!textarea.value) {
+                    displayDiv.innerText = "";
+                    textarea.placeholder = originalPlaceholder;
+                }
+            });
         });
     </script>
 </body>
